@@ -30,7 +30,7 @@ require_once "resources/paging.php";
 	<tr>
 		<td>
 			<a href="status-json.php">JSON version</a>.
-			<table id="parkedcalls">
+			<table id="parkedcalls" class="tr_hover" width="100%">
 				<thead>
 					<tr>
 						<th>Spot</th>
