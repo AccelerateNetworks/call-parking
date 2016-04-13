@@ -13,5 +13,5 @@ if (!$fp) {
 	die("ERROR");
 }
 
-$valet_info = simplexml_load_string(trim(event_socket_request($fp, "api valet_info")));
-echo json_encode($valet_info);
+$valet_info = trim(event_socket_request($fp, "api valet_info"));
+echo $valet_info;

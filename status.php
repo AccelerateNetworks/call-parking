@@ -29,7 +29,7 @@ require_once "resources/paging.php";
 	</tr>
 	<tr>
 		<td>
-			<a href="status-json.php">JSON version</a>.
+			<a href="status-xml.php">XML version</a>.
 		</td>
 	</tr>
 </table>
