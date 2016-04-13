@@ -16,9 +16,10 @@ function updateSpot(spot) {
     }
     console.log(spot);
     for(var j = 0; j < columns.length; j++) {
-      row.getElementsByClassName(columns[j]).textContent = spot[columns[j]];
+      row.getElementsByClassName(columns[j])[0].textContent = spot[columns[j]];
     }
 }
+
 function updateTable() {
     var parkinglots = JSON.parse(this.responseText);
     for(var lot in parkinglots) {
