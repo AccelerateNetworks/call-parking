@@ -12,7 +12,7 @@ function updateSpot(spot) {
           row.appendChild(cell);
         }
         document.getElementById("parkedcalls").appendChild(row);
-        row.getElementsByClassName('spot')[0].textContent = spot;
+        row.getElementsByClassName('spot')[0].textContent = spot.spot;
     }
     for(var i = 0; i < columns.length; i++) {
       var cell = row.getElementsByClassName(columns[i]);
