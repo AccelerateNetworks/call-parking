@@ -9,7 +9,7 @@ function updateSpot(spot) {
           var cell = document.createElement('td');
           cell.classList.add(spot.call);
           cell.classList.add(columns[i]);
-          row.appendChild(parkinglot);
+          row.appendChild(cell);
         }
         row.getElementsByClassName('spot')[0].textContent = spot;
     }
