@@ -29,7 +29,7 @@ function updateTable() {
 
 function fetchUpdate() {
     var request = new XMLHttpRequest();
-    request.addEventListener('load', loaded);
+    request.addEventListener('load', updateTable);
     request.open("GET", "status-json.php");
     request.send();
 }
