@@ -16,6 +16,7 @@ if (!$fp) {
 $xml = trim(event_socket_request($fp, "api valet_info"));
 $valet_info = new SimpleXMLElement($xml);
 $out = array();
+print_r($valet_info);
 foreach($valet_info as $lot) {
 	$lot_name = $lot['name'];
 	$out[$lot_name] = array();
@@ -24,4 +25,5 @@ foreach($valet_info as $lot) {
 		$out[$lot_name][] = array("call_uuid" => $spot['uuid'], "spot" => $spot);
 	}
 }
+
 echo json_encode($out);
