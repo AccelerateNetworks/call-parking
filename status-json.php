@@ -19,7 +19,7 @@ $out = array();
 foreach($valet_info as $lot) {
 	$out[$lot['name']] = array();
 	foreach($lot as $spot) {
-		$out[$lot['name']][$spot] = $spot['uuid'];
+		$out[$lot['name']][] = array("call_uuid" => $spot['uuid'], "spot" => $spot);
 	}
 }
 echo json_encode($out);
