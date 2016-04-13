@@ -7,10 +7,17 @@ require_once "root.php";
 require_once "resources/require.php";
 require_once "resources/check_auth.php";
 
+$vars = array('caller_id_number', 'caller_id_name', 'start_epoch', 'start_uepoch');
+
 $fp = event_socket_create($_SESSION['event_socket_ip_address'], $_SESSION['event_socket_port'], $_SESSION['event_socket_password']);
 
 if (!$fp) {
 	die("ERROR");
+}
+
+function uuid_getvar($uuid, $var) {
+	global $fp;
+	return trim(event_socket_request($fp, "api uuid_getvar ".$uuid." ".$var));
 }
 
 $xml = trim(event_socket_request($fp, "api valet_info"));
@@ -20,8 +27,16 @@ foreach($valet_info as $lot) {
 	$lot_name = (string)$lot['name'];
 	$out[$lot_name] = array();
 	foreach($lot as $spot) {
-		error_log("Lot $lot_name spot $spot occupied by call ".$spot['uuid']."\n");
-		$out[$lot_name][] = array("call_uuid" => (string)$spot['uuid'], "spot" => (string)$spot);
+		$uuid = (string)$spot['uuid'];
+		$spot = (int)$spot;
+		$call = array(
+			"call" => $uuid,
+			"spot" => $spot
+		);
+		foreach($vars as $var) {
+			$call[$var] = uuid_getvar($uuid, $var);
+		}
+		$out[$lot_name][] = $call;
 	}
 }
 
