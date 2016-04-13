@@ -7,7 +7,7 @@ require_once "root.php";
 require_once "resources/require.php";
 require_once "resources/check_auth.php";
 
-$vars = array('caller_id_number', 'caller_id_name', 'start_epoch', 'start_uepoch');
+$vars = array('caller_id_number', 'caller_id_name', 'RFC2822_DATE');
 
 $fp = event_socket_create($_SESSION['event_socket_ip_address'], $_SESSION['event_socket_port'], $_SESSION['event_socket_password']);
 
