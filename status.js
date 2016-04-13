@@ -22,6 +22,7 @@ function updateSpot(spot) {
 }
 
 function updateTable() {
+    calls = [];
     var parkinglots = JSON.parse(this.responseText);
     for(var lot in parkinglots) {
       if(parkinglots.hasOwnProperty(lot)) {
@@ -44,4 +45,4 @@ function fetchUpdate() {
     request.send();
 }
 
-console.log(setInterval(fetchUpdate, 1000));
+setInterval(fetchUpdate, 1000);
