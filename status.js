@@ -11,6 +11,7 @@ function updateSpot(spot) {
           cell.classList.add(columns[i]);
           row.appendChild(cell);
         }
+        document.getElementById("parkedcalls").appendChild(row);
         row.getElementsByClassName('spot')[0].textContent = spot;
     }
     for(var i = 0; i < columns.length; i++) {

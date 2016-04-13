@@ -30,7 +30,7 @@ require_once "resources/paging.php";
 	<tr>
 		<td>
 			<a href="status-json.php">JSON version</a>.
-			<table>
+			<table id="parkedcalls">
 				<thead>
 					<tr>
 						<th>Spot</th>
@@ -41,6 +41,7 @@ require_once "resources/paging.php";
 						<th>created_time</th>
 					</tr>
 				</thead>
+			</table>
 		</td>
 	</tr>
 </table>
