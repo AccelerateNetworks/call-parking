@@ -14,7 +14,6 @@ function updateSpot(spot) {
         document.getElementById("parkedcalls").appendChild(row);
         row.getElementsByClassName('spot')[0].textContent = spot.spot;
     }
-    console.log(spot);
     for(var j = 0; j < columns.length; j++) {
       row.getElementsByClassName(columns[j])[0].textContent = spot[columns[j]];
     }
