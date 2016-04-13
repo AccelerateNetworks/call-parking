@@ -17,9 +17,11 @@ $xml = trim(event_socket_request($fp, "api valet_info"));
 $valet_info = new SimpleXMLElement($xml);
 $out = array();
 foreach($valet_info as $lot) {
-	$out[$lot['name']] = array();
+	$lot_name = $lot['name'];
+	$out[$lot_name] = array();
 	foreach($lot as $spot) {
-		$out[$lot['name']][] = array("call_uuid" => $spot['uuid'], "spot" => $spot);
+		error_log("Lot $lot_name spot $spot occupied by call ".$spot['uuid']."\n");
+		$out[$lot_name][] = array("call_uuid" => $spot['uuid'], "spot" => $spot);
 	}
 }
 echo json_encode($out);
