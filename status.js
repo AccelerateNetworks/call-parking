@@ -1,4 +1,5 @@
 var columns = ['spot', 'caller_id_name', 'caller_id_number', 'RFC2822_DATE', 'answered_time', 'created_time'];
+var calls = [];
 function updateSpot(spot) {
     var row = document.getElementById(spot.call);
     if(row === null) {
@@ -17,6 +18,7 @@ function updateSpot(spot) {
     for(var j = 0; j < columns.length; j++) {
       row.getElementsByClassName(columns[j])[0].textContent = spot[columns[j]];
     }
+    calls.push(spot.call);
 }
 
 function updateTable() {
@@ -25,6 +27,13 @@ function updateTable() {
       if(parkinglots.hasOwnProperty(lot)) {
         parkinglots[lot].each(updateSpot);
       }
+    }
+    var table = document.getElementById("parkedcalls");
+    var rows = table.getElementsByTagName('tr');
+    for(var i = 1; i < rows.length; i++) {
+        if(calls.indexOf(rows[i].id) == -1) {
+          table.removeChild(row);
+        }
     }
 }
 
