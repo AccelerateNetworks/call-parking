@@ -29,9 +29,21 @@ require_once "resources/paging.php";
 	</tr>
 	<tr>
 		<td>
-			<a href="status-xml.php">XML version</a>.
+			<a href="status-json.php">JSON version</a>.
+			<table>
+				<thead>
+					<tr>
+						<th>Spot</th>
+						<th>Caller ID Name</th>
+						<th>Caller ID Number</th>
+						<th>RFC2822_DATE</th>
+						<th>answered_time</th>
+						<th>created_time</th>
+					</tr>
+				</thead>
 		</td>
 	</tr>
 </table>
+<script type="text/javascript" src="status.js"></script>
 <?php
 require_once "footer.php";
