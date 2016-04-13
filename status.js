@@ -33,7 +33,7 @@ function updateTable() {
     var rows = table.getElementsByTagName('tr');
     for(var i = 1; i < rows.length; i++) {
         if(calls.indexOf(rows[i].id) == -1) {
-          table.removeChild(row);
+          table.removeChild(rows[i]);
         }
     }
 }
