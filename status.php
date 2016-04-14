@@ -45,6 +45,7 @@ require_once "resources/paging.php";
 		</td>
 	</tr>
 </table>
+<script type="text/javascript" src="vendor/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="status.js"></script>
 <?php
 require_once "footer.php";
