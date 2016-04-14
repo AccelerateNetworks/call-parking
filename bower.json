@@ -1,0 +1,23 @@
+{
+  "name": "call-parking",
+  "authors": [
+    "Finn <finn@callpipe.com>"
+  ],
+  "description": "FusionPBX Call Parking",
+  "main": "",
+  "moduleType": [],
+  "license": "GPLv3",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.12.0"
+  }
+}

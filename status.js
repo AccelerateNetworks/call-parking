@@ -16,7 +16,11 @@ function updateSpot(spot) {
         row.getElementsByClassName('spot')[0].textContent = spot.spot;
     }
     for(var j = 0; j < columns.length; j++) {
-      row.getElementsByClassName(columns[j])[0].textContent = spot[columns[j]];
+      if(columns[j] == 'answered_time' || columns[j] == 'created_time') {
+        row.getElementsByClassName(columns[j])[0].textContent = moment(spot[columns[j]]/1000).fromNow();
+      } else {
+        row.getElementsByClassName(columns[j])[0].textContent = spot[columns[j]];
+      }
     }
     calls.push(spot.call);
 }
