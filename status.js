@@ -1,4 +1,4 @@
-var columns = ['spot', 'caller_id_name', 'caller_id_number', 'RFC2822_DATE', 'answered_time', 'created_time'];
+var columns = ['spot', 'caller_id_name', 'caller_id_number', 'created_time'];
 var calls = [];
 function updateSpot(spot) {
     var row = document.getElementById(spot.call);
@@ -16,8 +16,8 @@ function updateSpot(spot) {
         row.getElementsByClassName('spot')[0].textContent = spot.spot;
     }
     for(var j = 0; j < columns.length; j++) {
-      if(columns[j] == 'answered_time' || columns[j] == 'created_time') {
-        row.getElementsByClassName(columns[j])[0].textContent = moment(spot[columns[j]]/1000).fromNow();
+      if(columns[j] == 'created_time') {
+        row.getElementsByClassName(columns[j])[0].textContent = moment(spot[columns[j]]/1000).fromNow(true);
       } else {
         row.getElementsByClassName(columns[j])[0].textContent = spot[columns[j]];
       }

@@ -29,16 +29,13 @@ require_once "resources/paging.php";
 	</tr>
 	<tr>
 		<td>
-			<a href="status-json.php">JSON version</a>.
 			<table id="parkedcalls" class="tr_hover" width="100%">
 				<thead>
 					<tr>
 						<th>Spot</th>
 						<th>Caller ID Name</th>
 						<th>Caller ID Number</th>
-						<th>RFC2822_DATE</th>
-						<th>answered_time</th>
-						<th>created_time</th>
+						<th>Total Call Time</th>
 					</tr>
 				</thead>
 			</table>
