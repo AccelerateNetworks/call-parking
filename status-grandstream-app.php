@@ -24,14 +24,13 @@ $out->startElement('view');
 // <section>
 $out->startElement('section');
 
-label($domain['domain_name']);
-
 foreach($valet_info as $lot) {
   if((string)$lot['name'] == 'parking_lot@'.$domain['domain_name']) {
     foreach($lot as $spot) {
       $spot_num = (int)$spot;
       $caller_id_number = uuid_getvar((string)$spot['uuid'], 'caller_id_number');
-      label("$spot_num occupied by $caller_id_number");
+      $caller_id_name = uuid_getvar((string)$spot['uuid'], 'caller_id_name');
+      label("$spot_num occupied by $caller_id_name ($caller_id_number)");
     }
   }
 }
