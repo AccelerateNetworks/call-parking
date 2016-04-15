@@ -56,6 +56,7 @@ $out->startElement('Softkey');
 $out->writeAttribute('action', 'UseURL');
 $out->writeAttribute('label', 'Refresh');
 $out->writeAttribute('commandArgs', 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?token=".$_GET['token']);
+$out->endElement();
 
 // </Softkeys>
 $out->endElement();
