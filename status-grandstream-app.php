@@ -17,8 +17,9 @@ $out->writeAttribute('title', 'Call Status');
 $out->startElement('view');
 foreach($lot->{'parking_lot@'.$domain['domain_name']} as $spot) {
   $spot_num = (int)$spot;
+  $caller_id_number = uuid_getvar((string)$spot['uuid'], 'caller_id_number');
   $out->startElement('text');
-  $out->writeAttribute('label', $spot_num);
+  $out->writeAttribute('label', "$spot_num occupied by $caller_id_number");
   $out->endElement();
 }
 $out->endElement();
