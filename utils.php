@@ -38,6 +38,6 @@ function uuid_getvar($uuid, $var) {
 function label($text) {
   global $out;
   $out->startElement('text');
-  $out->writeAttribute('label', "$spot_num occupied by $caller_id_number");
+  $out->writeAttribute('label', $text);
   $out->endElement();
 }
