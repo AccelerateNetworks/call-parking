@@ -17,9 +17,7 @@ $out->writeAttribute('title', 'Call Status');
 $out->startElement('view');
 
 label($domain['domain_name']);
-echo "<!--";
-print_r($valet_info);
-echo "-->";
+
 foreach($valet_info as $lot) {
   if((string)$lot['name'] == 'parking_lot@'.$domain['domain_name']) {
     foreach($lot as $spot) {
