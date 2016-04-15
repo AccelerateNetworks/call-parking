@@ -20,10 +20,14 @@ label($domain['domain_name']);
 echo "<!--";
 print_r($valet_info);
 echo "-->";
-foreach($valet_info->{'parking_lot@'.$domain['domain_name']} as $spot) {
-  $spot_num = (int)$spot;
-  $caller_id_number = uuid_getvar((string)$spot['uuid'], 'caller_id_number');
-  label("$spot_num occupied by $caller_id_number");
+foreach($valet_info as $lot) {
+  if((string)$lot == 'parking_lot@'.$domain['domain_name']) {
+    foreach($lot as $spot) {
+      $spot_num = (int)$spot;
+      $caller_id_number = uuid_getvar((string)$spot['uuid'], 'caller_id_number');
+      label("$spot_num occupied by $caller_id_number");
+    }
+  }
 }
 $out->endElement();
 echo $out->outputMemory();
