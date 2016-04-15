@@ -46,6 +46,7 @@ $out->endElement();
 $out->startElement('Softkeys');
 
 // <Softkey action="QuitApp" label="Exit" />
+$out->startElement('Softkey');
 $out->writeAttribute('action', 'QuitApp');
 $out->writeAttribute('label', 'Exit');
 $out->endElement();
