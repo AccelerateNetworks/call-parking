@@ -15,12 +15,13 @@ $out->startDocument('1.0','UTF-8');
 $out->startElement("xmlapp");
 $out->writeAttribute('title', 'Call Status');
 $out->startElement('view');
+
+label($domain['domain_name']);
+
 foreach($valet_info->{'parking_lot@'.$domain['domain_name']} as $spot) {
   $spot_num = (int)$spot;
   $caller_id_number = uuid_getvar((string)$spot['uuid'], 'caller_id_number');
-  $out->startElement('text');
-  $out->writeAttribute('label', "$spot_num occupied by $caller_id_number");
-  $out->endElement();
+  label("$spot_num occupied by $caller_id_number");
 }
 $out->endElement();
 echo $out->outputMemory();

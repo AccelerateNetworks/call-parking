@@ -34,3 +34,10 @@ function uuid_getvar($uuid, $var) {
 	global $fp;
 	return trim(event_socket_request($fp, "api uuid_getvar ".$uuid." ".$var));
 }
+
+function label($text) {
+  global $out;
+  $out->startElement('text');
+  $out->writeAttribute('label', "$spot_num occupied by $caller_id_number");
+  $out->endElement();
+}
