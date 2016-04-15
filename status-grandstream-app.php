@@ -16,9 +16,7 @@ $out->startElement("xmlapp");
 $out->writeAttribute('title', 'Call Status');
 $out->startElement('view');
 
-$out->startElement('text');
-$out->writeAttribute('label', $domain['domain_name']);
-$out->endElement();
+label($domain['domain_name']);
 
 foreach($valet_info->{'parking_lot@'.$domain['domain_name']} as $spot) {
   $spot_num = (int)$spot;
