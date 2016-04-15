@@ -62,6 +62,25 @@ $out->endElement();
 // </Softkeys>
 $out->endElement();
 
+// <Events>
+$out->startElement('Events');
+
+// <Event state="callStateEnded">
+$out->startElement('Event');
+$out->writeAttribute('state', 'callStateEnded');
+
+// <Action action="UseURL" commandArgs=".."
+$out->startElement('Action');
+$out->writeAttribute('action', 'UseURL');
+$out->writeAttribute('commandArgs', 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?token=".$_GET['token']);
+$out->endElement();
+
+// </Event>
+$out->endElement();
+
+// </Events>
+$out->endElement();
+
 // </xmlapp>
 $out->endElement();
 echo $out->outputMemory();
