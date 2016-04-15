@@ -15,7 +15,7 @@ $out->startDocument('1.0','UTF-8');
 $out->startElement("xmlapp");
 $out->writeAttribute('title', 'Call Status');
 $out->startElement('view');
-foreach($lot->{'parking_lot@'.$domain['domain_name']} as $spot) {
+foreach($valet_info->{'parking_lot@'.$domain['domain_name']} as $spot) {
   $spot_num = (int)$spot;
   $caller_id_number = uuid_getvar((string)$spot['uuid'], 'caller_id_number');
   $out->startElement('text');
