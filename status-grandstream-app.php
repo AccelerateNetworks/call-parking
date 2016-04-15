@@ -29,5 +29,17 @@ foreach($valet_info as $lot) {
     }
   }
 }
+
+$out->startElement('Softkey');
+$out->writeAttribute('action', 'QuitApp');
+$out->writeAttribute('label', 'Cancel');
+$out->endElement();
+
+$out->startElement('Softkey');
+$out->writeAttribute('action', 'UseURL');
+$out->writeAttribute('label', 'Refresh');
+$out->writeAttribute('commandArgs', 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?token=".$_GET['token']);
+$out->endElement();
+
 $out->endElement();
 echo $out->outputMemory();
